@@ -10,10 +10,10 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
-                <h2>Danh sách slide</h2>
+                <h2>Danh sách thể loại</h2>
             </div>
             <div class="col-sm-6" style="margin-top: 30px;"> 
-                <a type="button" class="btn-sm btn-primary" style="margin-left: 320px;" href="/slide/create">Thêm</a>
+                <a type="button" class="btn-sm btn-primary" style="margin-left: 320px;" href="/theloai/create">Thêm</a>
             </div>
         </div>
 
@@ -21,27 +21,23 @@
             <thead>
                 <tr>
                     <th>STT</th>
-                    <th>Tiêu đề</th>
-                    <th>Nội dung</th>
-                    <th>Ảnh</th>
+                    <th>Tên thể loại</th>
+                    <th>Ghi chú</th>
                     <th>Chức năng</th>
                 </tr>
             </thead>
             <tbody>
                 <?php $stt = 1 ?>
-                @foreach($slide as $value)
+                @foreach($theLoai as $value)
                 <tr>
                     <td>
                         <a class="btn btn-default btn-circle">{{$stt++}}</a>
                     </td>
                     <td>
-                        <i style="margin-left: 25px;"> {{$value->tieude}}</i><br>
+                        <i style="margin-left: 25px;"> {{$value->tentheloai}}</i><br>
                     </td>
                     <td>
-                        {{$value->noidung}}
-                    </td>
-                    <td>
-                        <img style="width: 80px; height: 80px;" src="{{asset("upload/images/".$value->images)}}"></img>
+                        {{$value->ghichu}}
                     </td>
                     <td style="padding-left:0;line-height: 33px; ">
                         <a class="btn-default btn-xs" href="edit/{{$value->id}}">

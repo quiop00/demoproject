@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTlTintucsTable extends Migration
+class TlTintucs extends Migration
 {
     /**
      * Run the migrations.
@@ -15,11 +15,11 @@ class CreateTlTintucsTable extends Migration
     {
         Schema::create('tl_tintucs', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('id_theloai');
             $table->string('images');
             $table->string('tieude');
             $table->string('mieuta');
             $table->string('noidung');
-            $table->date('ngay');
             $table->timestamps();
         });
     }

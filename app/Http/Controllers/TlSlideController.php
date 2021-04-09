@@ -15,7 +15,6 @@ class TlSlideController extends Controller
      */
     public function index()
     {
-        //
         $slide = DB::table('tl_slides')
             ->get();
         return view('viewslide', compact([
@@ -42,7 +41,6 @@ class TlSlideController extends Controller
     public function store(Request $request)
     {
         $data  = new tl_slide();
-        $data->images = $request->images;
         $data->tieude = $request->tieude;
         $data->noidung = $request->noidung;
 
@@ -57,7 +55,7 @@ class TlSlideController extends Controller
             echo "chưa có file";
         }
         $data->save();
-        return redirect('/slide/index');
+        return redirect()->route('tl_slide.index')->with('message', 'Thêm thành công');
     }
 
     /**
@@ -103,7 +101,7 @@ class TlSlideController extends Controller
             $data->images = $filename;
         }
         $data->save();
-        return redirect('/slide/index');
+        return redirect('/slide/index')->with('message', 'Cập nhập thành công');
     }
 
 
@@ -116,6 +114,6 @@ class TlSlideController extends Controller
     public function destroy(tl_slide $tl_slide, $id)
     {
         tl_slide::find($id)->delete();
-        return redirect('/slide/index');
+        return redirect('/slide/index')->with('message', 'Xóa thành công');
     }
 }

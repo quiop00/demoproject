@@ -1,7 +1,6 @@
 @extends('layout.layout')
 
 @section('content')
-
 <body>
     <div class="container">
         <h2>Thêm slide</h2>
@@ -9,11 +8,11 @@
             @csrf
             <div class="form-group">
                 <label>Tiêu đề</label>
-                <input id="" type="text" class="form-control" name="tieude" placeholder="nhập tiêu đề" />
+                <input id="tieude" type="text" class="form-control" name="tieude" placeholder="nhập tiêu đề" />
             </div>
             <div class="form-group">
                 <label>Nội dung</label>
-                <input id="" type="text" class="form-control" name="noidung" placeholder="nhập nội dung" />
+                <input id="noidung" type="text" class="form-control" name="noidung" placeholder="nhập nội dung" />
             </div>
             <div class="form-group">
                 <label>Ảnh</label>

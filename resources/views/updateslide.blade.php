@@ -26,7 +26,7 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-success px-4 float-right"><i class="glyphicon glyphicon-plus"></i> Thêm mới</button>
+            <button type="submit" class="btn btn-success px-4 float-right"><i class="glyphicon glyphicon-plus"></i> Cập nhập</button>
         </form>
     </div>
 </body>

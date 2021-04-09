@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,7 +10,22 @@
     <link href="/css/basic.css" rel="stylesheet" />
     <link href="/css/custom.css" rel="stylesheet" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
+
+
 </head>
+<style>
+    label.error {
+        color: red;
+        font-family: verdana, Helvetica;
+    }
+
+    .btn-success:hover {
+        background: #6699FF;
+        text-decoration: none;
+    }
+</style>
+
 <body>
     <div id="wrapper">
         <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
@@ -98,6 +114,9 @@
         <script src="/js/jquery.metisMenu.js"></script>
         <!-- CUSTOM SCRIPTS -->
         <script src="/js/custom.js"></script>
+        
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js" type="text/javascript"></script>
+        <script src="/js/validations.js"></script>
 </body>
 
 </html>
