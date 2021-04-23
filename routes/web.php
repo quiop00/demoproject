@@ -18,6 +18,10 @@ Route::get('/', function () {
 });
 
 
+Route::get('user/create', 'HomeController@create');
+Route::post('user/create', 'HomeController@store');
+
+
 //-------------------- Slide  ------------------------
 Route::group(['prefix' => 'slide'], function () {
     Route::get('/index', 'TlSlideController@index')->name('tl_slide.index');
