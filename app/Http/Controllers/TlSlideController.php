@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Slide;
 use App\Models\tl_slide;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -13,12 +14,15 @@ class TlSlideController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $search = $request->get('search')??"";
+
         $slide = DB::table('tl_slides')
-            ->get();
+        ->where('tieude','like','%'.$search.'%')
+            ->paginate(8);
         return view('viewslide', compact([
-            'slide'
+            'slide','search'
         ]));
     }
 

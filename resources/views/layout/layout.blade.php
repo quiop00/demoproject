@@ -113,10 +113,9 @@
         <!-- METISMENU SCRIPTS -->
         <script src="/js/jquery.metisMenu.js"></script>
         <!-- CUSTOM SCRIPTS -->
-        <script src="/js/custom.js"></script>
         
         <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js" type="text/javascript"></script>
-        <script src="/js/validations.js"></script>
+        <!-- <script src="/js/validations.js"></script> -->
 </body>
 
 </html>

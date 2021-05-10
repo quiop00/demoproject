@@ -28,10 +28,16 @@ class TlTintucController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
         $theLoai = DB::table('tl_theloais')->pluck('tentheloai', 'id');
-        return view('createtintuc',compact(['theLoai']));
+
+        $tintuc = tl_tintuc::find($id);
+        // $tintuc = DB::table('tl_tintucs')
+        // ->where('id', '=', $id)
+        // ->get();
+        // dd($tintuc);
+        return view('createtintuc',compact(['theLoai','tintuc']));
     }
 
     /**
@@ -40,24 +46,24 @@ class TlTintucController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        $tinTuc = new tl_tintuc();
+        $tintuc = tl_tintuc::find($id);
         $tinTuc->id_theloai = $request->id_theloai;
         $tinTuc->tieude = $request->tieude;
         $tinTuc->mieuta = $request->mieuta;
         $tinTuc->noidung = $request->noidung;
         $tinTuc->created_at = Carbon::now();
 
-        if ($request->hasFile('images')) {
-            $file = $request->file('images');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
-            $file->move('upload/images/', $filename);
-            $tinTuc->images = $filename;
-        } else {
-            echo "chưa có file";
-        }
+        // if ($request->hasFile('images')) {
+        //     $file = $request->file('images');
+        //     $extension = $file->getClientOriginalExtension();
+        //     $filename = time() . '.' . $extension;
+        //     $file->move('upload/images/', $filename);
+        //     $tinTuc->images = $filename;
+        // } else {
+        //     echo "chưa có file";
+        // }
         $tinTuc->save();
         return redirect('/tintuc/index')->with('message','Thêm thành công');
     }

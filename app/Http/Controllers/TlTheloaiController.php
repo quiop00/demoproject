@@ -22,6 +22,29 @@ class TlTheloaiController extends Controller
         ]));
     }
 
+
+    public function search(Request $request)
+    {
+
+        $validated = $request->validate(
+            [
+                'tentheloai' => 'required',
+            ],
+            [
+                'required' => 'Không được để trống'
+            ]
+        );
+
+        $search = $request->get('tentheloai') ?? "";
+
+        $theLoai = DB::table('tl_theloais')
+            ->where('tentheloai', 'like', '%' . $search . '%')
+            ->get();
+        return view('viewtheloai', compact([
+            'theLoai', 'search'
+        ]));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -29,7 +52,7 @@ class TlTheloaiController extends Controller
      */
     public function create()
     {
-       return view('createtheloai');
+        return view('createtheloai');
     }
 
     /**
@@ -40,6 +63,17 @@ class TlTheloaiController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate(
+            [
+                'tentheloai' => 'required',
+                'ghichu' => 'required',
+            ],
+            [
+                'required' => 'Không được để trống'
+            ]
+        );
+
         $theLoai  = new tl_theloai();
         $theLoai->tentheloai = $request->tentheloai;
         $theLoai->ghichu = $request->ghichu;
@@ -94,7 +128,7 @@ class TlTheloaiController extends Controller
      * @param  \App\Models\tl_theloai  $tl_theloai
      * @return \Illuminate\Http\Response
      */
-    public function destroy(tl_theloai $tl_theloai,$id)
+    public function destroy(tl_theloai $tl_theloai, $id)
     {
         tl_theloai::find($id)->delete();
         return redirect('/theloai/index')->with('message', 'Xóa thành công');

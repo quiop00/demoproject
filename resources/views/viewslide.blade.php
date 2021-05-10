@@ -1,58 +1,162 @@
-@extends('layout.layout')
-
-@section('content')
-@if(Session::has('message'))
-<div class="alert alert-success text-center" role="alert">
-    <strong></strong> {{Session::get('message')}}
-</div>
-@endif
+<head>
+    <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+    <link href="/css/bootstrap.css" rel="stylesheet" />
+</head>
+<style>
+    #table_id_filter{
+        display: none;
+    }
+</style>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <h2>Danh sách slide</h2>
-            </div>
-            <div class="col-sm-6" style="margin-top: 30px;"> 
-                <a type="button" class="btn-sm btn-primary" style="margin-left: 320px;" href="/slide/create">Thêm</a>
-            </div>
-        </div>
+    <table id="table_id">
+        <thead>
+            <tr>
+                <th>Sites</th>
+                <th>Sites</th>
+                <th>Sites</th>
+                <th>Sites</th>
+                <th>Sites</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+            </tr>
+            <tr>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+            </tr>
+            <tr>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+            </tr>
+            <tr>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+            </tr>
+            <tr>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+            </tr>
+            <tr>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+            </tr>
+            <tr>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+            </tr>
+            <tr>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+            </tr>
+            <tr>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+            </tr>
+            <tr>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+            </tr>
+            <tr>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+            </tr>
+            <tr>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+            </tr>
+            <tr>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+            </tr>
+            <tr>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+            </tr>
+            <tr>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+            </tr>
+            <tr>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+            </tr>
+            <tr>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+            </tr>
 
-        <table class="table table-bordered" style="width: 85%;">
-            <thead>
-                <tr>
-                    <th>STT</th>
-                    <th>Tiêu đề</th>
-                    <th>Nội dung</th>
-                    <th>Ảnh</th>
-                    <th>Chức năng</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php $stt = 1 ?>
-                @foreach($slide as $value)
-                <tr>
-                    <td>
-                        <a class="btn btn-default btn-circle">{{$stt++}}</a>
-                    </td>
-                    <td>
-                        <i style="margin-left: 25px;"> {{$value->tieude}}</i><br>
-                    </td>
-                    <td>
-                        {{$value->noidung}}
-                    </td>
-                    <td>
-                        <img style="width: 80px; height: 80px;" src="{{asset("upload/images/".$value->images)}}"></img>
-                    </td>
-                    <td style="padding-left:0;line-height: 33px; ">
-                        <a class="btn-default btn-xs" href="edit/{{$value->id}}">
-                            <i class="glyphicon glyphicon-pencil"></i>Sửa</a>
-                        <a class="btn-default btn-xs" href="delete/{{$value->id}}">
-                            <i class="glyphicon glyphicon-trash"></i>Delete</a>
-                    </td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
+            <tr>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+                <td>SitePoint</td>
+            </tr>
+
+        </tbody>
+    </table>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#table_id').DataTable();
+        });
+    </script>
 </body>
-@endsection
+
+</html>

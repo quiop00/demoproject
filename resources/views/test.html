@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/layout.css">
+
+    <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+</head>
+<style>
+    #table_id_filter{
+        display: none;
+    }
+   .tha {
+    color: white!important;
+}
+</style>
+
+<header>
+    <nav class="bg-lignt border">
+        <div class="row">
+            <div class="col-sm-2" style=" margin-left: 20px;margin-top: 13px; font-size: 17px;">
+                <div>
+                    <i class="glyphicon glyphicon-align-justify"></i>
+                </div>
+            </div>
+            <div class="col-sm-2" style="margin-left: -179px;margin-top: 13px; color: #0099FF;">
+                <div class="glyphicon glyphicon-search"><a href="#" style="margin-left: 5px;margin-top: 1px">検索</a>
+                </div>
+            </div>
+            <div class="col-sm-2" style="margin-left: -170px;margin-top: 13px; color: #0099FF;">
+                <div class="glyphicon glyphicon-plus"><a href="#" style="margin-left: 5px;">検索</a></div>
+            </div>
+            <div class="col-sm-3" style="background-color: ;">
+                <div style="height: 47px;">
+                    <img src="../images/vietnam.png"
+                        style="border-radius: 90%;margin-left: 887px; width: 70px; height: 36px; margin-top: 4px">
+                </div>
+            </div>
+            <div class="col-sm-3" style="background-color: ;">
+                <div>
+                    <span class="glyphicon glyphicon-chevron-down" style="margin-top: 10px;margin-left: 610px;"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<body>
+
+    <div class="container-fluid border">
+        <div class="row">
+            <div class="col-sm-11">
+                <div class="btn-sm-6">
+                    <h3 style="margin-left: 20px;">プログラムID／名称</h3>
+                </div>
+            </div>
+
+            <div class="col-sm-1">
+                <a class="btn-default btn-sm-2" onclick="$('#add').toggle();return false;">
+                    <i class="glyphicon glyphicon-chevron-down" style="margin-top: 20px; margin-left: 50px;"></i></a>
+            </div>
+        </div>
+        <div id="add" style="margin-top: -20px;">
+            <hr>
+            <form>
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-0 col-form-label" style="margin-left: 170px;">ドキュメント</label>
+                    <div class="col-sm-3">
+                        <input type="email" class="form-control" id="TXT_user_cd" placeholder="">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-0 col-form-label"
+                        style="margin-left: 170px;">サブシステム</label>
+                    <div class="col-sm-3">
+                        <input type="password" class="form-control" id="TXT_user_nm_j" placeholder="">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-0 col-form-label"
+                        style="margin-left: 170px;">サブシステム</label>
+                    <div class="col-sm-3">
+                        <input type="password" class="form-control" id="TXT_user_nm_e" placeholder="">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- view  -->
+    <div class="container-fluid border" style="margin-top: 30px;">
+
+        <div>
+            <table class="table table-bordered" id="table_id">
+                <thead>
+                    <tr style="background-color: #0099FF;">
+                        <th class="tha"><label id="DSP_user_cd">ユーザーコード</label></th>
+                        <th class="tha"><label id="DSP_user_nm_j">ユーザー名称和文</label></th>
+                        <th class="tha"><label id="DSP_user_ab_j">ユーザー名称英文</label></th>
+                        <th class="tha"><label id="DSP_user_nm_e">ユーザー名称英文</label></th>
+                        <th class="tha"><label id="DSP_user_ab_e">ユーザー名称英文</label></th>
+                        <th class="tha"><label id="DSP_auth_role_div">権限区分</label></th>
+                        <th class="tha"><label id="DSP_incumbent_div">権限区分</label></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                    </tr>  <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                    </tr>  <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                    </tr>  <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                    </tr>  <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                    </tr>  <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                    </tr>  <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                    </tr>  <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                    </tr>  <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                    </tr>  <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                    </tr>  <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                    </tr>  <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                        <td>john@example.com</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <!-- end view  -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#table_id').DataTable();
+        });
+    </script>
+</body>
+
+</html>

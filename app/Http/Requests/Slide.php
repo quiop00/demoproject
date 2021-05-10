@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreUser extends FormRequest
+class Slide extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,18 +24,14 @@ class StoreUser extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'username' => 'required|min:8',
-            'email' => 'required|email|unique:users'
+            'tieude' => 'required'
         ];
     }
 
     public function messages()
     {
         return [
-            'required' => 'Không được để trống',
-            'min' => 'không nhỏ hơn 8',
-            'email' => 'sai định dạng'  
+            'required' => 'Không được để trống'
         ];
     }
 }
